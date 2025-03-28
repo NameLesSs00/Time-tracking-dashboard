@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Colors:
+   - Primary:
+     - Purple 600: hsl(246, 80%, 60%) non
+     
+     - Orange 300 (Work): hsl(15, 100%, 70%) 
+     - Blue 300 (Play): hsl(195, 74%, 62%) 
+     - Pink 400 (Study): hsl(348, 100%, 68%) 
+     - Green 400 (Exercise): hsl(145, 58%, 55%) 
+     - Purple 700 (Social): hsl(264, 64%, 52%)
+     - Yellow 300 (Self Care): hsl(43, 84%, 65%) 
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+   - Neutral:
+     - Navy 950: hsl(226, 43%, 10%)
+     - Navy 900: hsl(235, 46%, 20%)
+     - Purple 500: hsl(235, 45%, 61%)
+     - Navy 200: hsl(236, 100%, 87%)
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+   Font:
+     - Family: Rubik (300, 400, 500)
+     - Body Font Size: 18px
+*/

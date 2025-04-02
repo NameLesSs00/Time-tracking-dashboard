@@ -8,25 +8,34 @@ interface ForBtn {
 
 function Profile({ select, setSelect }: ForBtn) {
   return (
-    <div className="relative w-[300px] mx-auto bg-[#1e204c] rounded-2xl overflow-hidden mb-3">
+    <div className="relative mx-auto bg-[#1e204c] rounded-2xl overflow-hidden mb-3 ">
       {/* Profile Header */}
-      <div className="flex items-center gap-4 p-4 py-8 bg-[#5847e9] rounded-2xl">
-        <div className="bg-white rounded-full p-[3px] w-16 h-16 flex items-center justify-center">
-          <Image src={jeremy} alt="Jeremy Robson" className="rounded-full "  style={{ width: "auto", height: "auto" }} priority/>
+      <div className="flex md:flex-col gap-4 p-4 py-10 bg-[#5847e9] rounded-2xl  ">
+        {/* Profile Image */}
+        <div className="bg-white rounded-full p-[3px] w-16 h-16 ">
+          <Image 
+            src={jeremy} 
+            alt="Jeremy Robson" 
+            className="rounded-full"  
+            style={{ width: "auto", height: "auto" }} 
+            priority 
+          />
         </div>
-        <div className="text-white">
-          <p className="text-sm opacity-80">Report for</p>
-          <h1 className="text-lg font-semibold">Jeremy Robson</h1>
+
+        {/* Name and Report Text */}
+        <div className="text-white text-center   md:text-left md:mt-4 md:mb-16">
+          <p className="text-sm md:text-lg opacity-70">Report for</p>
+          <h1 className="text-lg md:text-4xl ">Jeremy Robson</h1>
         </div>
       </div>
 
       {/* Timeframe Selection */}
-      <div className="flex justify-around py-3">
+      <div className="flex justify-around py-3 md:flex-col md:items-start md:pl-3 ">
         {["Daily", "Weekly", "Monthly"].map((label, index) => (
           <button
             key={index}
             onClick={() => setSelect(index)}
-            className={`px-3 py-2 text-sm rounded-md transition-all 
+            className={`px-3 py-2 text-sm md:text-lg transition-all 
               text-gray-400
               ${select === index ? "text-white" : "text-gray-400"} 
               hover:text-white`}
@@ -38,5 +47,6 @@ function Profile({ select, setSelect }: ForBtn) {
     </div>
   );
 }
+
 
 export default Profile;

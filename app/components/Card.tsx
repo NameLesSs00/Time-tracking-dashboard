@@ -12,34 +12,30 @@ interface Data {
 
 function Card({ title, current, previous, color, img_src, timeframes }: Data) {
   return (
-    <div className=" w-[300px] mx-auto my-3 rounded-2xl overflow-hidden z-10 flex flex-col">
-      {/* Colored Background (Top Section) - Will expand on hover */}
-      <div 
-        className={`h-[100px] flex justify-end items-center p-3 -mt-8 `} 
-        style={{ backgroundColor: color }}
-      >
-        <Image src={img_src} width={60} height={60} alt="Icon" className="h-auto"/>
+    <div className="relative my-[20px] rounded-2xl overflow-hidden flex flex-col min-w-[230px] min-h-[160px] md:min-w-[260px] md:min-h-[230px] md:my-0" style={{ backgroundColor: color }}>
+      {/* Top Section with Icon */}
+      <div className="flex justify-end items-center p-4 relative -top-[24px]">
+        <Image src={img_src} width={60} height={60} alt="Icon"/>
       </div>
 
-      {/* Dark Content Section */}
-      <div className="bg-[#1e204c] -mt-8 min-h-[100px] p-4 flex-1 flex flex-col gap-1 rounded-2xl">
-        {/* Top Section with Title & Ellipsis */}
-        <div className=" flex justify-between items-center">
-          <p className=" font-medium text-white">{title}</p>
+      {/* Dark Content Section (90% height, starts from bottom) */}
+      <div className="absolute bottom-0 w-full h-[80%] bg-[#1e204c] p-3 flex flex-col gap-2 rounded-t-2xl hover:bg-[#34397b] hover:cursor-pointer z-10  md:p-6">
+        {/* Title & Options */}
+        <div className="flex justify-between items-center">
+          <p className="font-medium text-white md:text-xl">{title}</p>
           <Image
             src={ellipsis}
             width={20}
             height={20}
             alt="Options"
-            className="cursor-pointer opacity-75 hover:opacity-100 overflow-hidden  hover:brightness-200 filter "
-            style={{ width: "auto", height: "auto" }}
+            className="cursor-pointer opacity-75 hover:opacity-100"
           />
         </div>
 
-        {/* Middle Section with Hours */}
-        <div className="flex justify-between items-center mb-2">
-          <p className="text-2xl font-semibold text-white">{current}hrs</p>
-          <p className="text-gray-400 text-sm">
+        {/* Hours Section */}
+        <div className="flex justify-between w-full md:flex-col ">
+          <p className="text-3xl md:text-5xl font-semibold text-white mr-5 md:my-2 md:mb-3 ">{current}hrs</p>
+          <p className="text-gray-400 text-sm ">
             Last {timeframes}: {previous}hrs
           </p>
         </div>
